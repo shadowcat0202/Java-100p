@@ -45,13 +45,19 @@ class Student extends Person{
 
 
 public class Java100_oop_Polymorphism{
-	public static void main(String[] args){
+	public static void main(String[] args){		
+		//super obj = new super();	O
+		//super obj = new sub();		O
+		//sub obj = new super();		X
+		//sub obj = new sub();		O
+		
+		
 		System.out.println("--------------Student s1 = new Student();---------------");
 		Student s1 = new Student();	//정상
 		System.out.println("s1.str1" + s1.str1);
 		System.out.println("s1.str2" + s1.str2);
-		System.out.print("s1.method1()→");	//오버라이딩
-		s1.method1();
+		System.out.print("s1.method1()→");	
+		s1.method1();	//오버라이딩
 		System.out.print("s1.sss()→");
 		s1.sss();
 		System.out.print("s1.ppp()→");
@@ -79,6 +85,7 @@ public class Java100_oop_Polymorphism{
 		
 		//Student s3 = new Person();	//Err 불가능
 		
+		
 		Person s4 = new Person();	//super 클래스의 자원들만 사용 가능
 		
 		
@@ -91,6 +98,13 @@ public class Java100_oop_Polymorphism{
 			obj.run();
 		}
 		
+		//[!]:매개변수의 다형성
+		//System.out.println() 메서드의 경우 어떠한 타입, 객체를 매개변수로 받더라도 에러없이 출력 가능
+		//실제 메서드의 API를 보면 -> public void println(Object x)로 되어있기 때문에 어떠한 타입이 전달되더라도 에러 없이 출력 가능
+		//결론적으로, Object는 가상 최상위 조상이므로 어떤 객체를 보내도 그 상위 타입이 된다
+		System.out.println("\n------------매개변수의 다형성------------");
+		System.out.println(new Person());
+		System.out.println(new Student());
 		
 	}
 }
