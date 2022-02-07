@@ -43,7 +43,8 @@ public class Java100_algorightm{
 		Arrays.sort(score, Collections.reverseOrder());	//정렬의 조건을 설정해서 하고자 할때->기본형(Primitive Type)의 배열에는 적용이 안된다.
 		System.out.println("내림차순 정렬후" + Arrays.toString(score));
 		
-		//순위
+		//순위	
+		System.out.println("\n--------------순위--------------");
 		int [] score1 = {88,50,38,100,90,100,99,75};
 		int [] ranking = new int[score1.length];
 		
@@ -54,5 +55,64 @@ public class Java100_algorightm{
 			}
 		}
 		System.out.println("점수:" + Arrays.toString(score1) + "\n순위:" + Arrays.toString(ranking));
+		
+		
+		
+		//빈도수(자격증 관련 코딩문제에서도 많이 나오는 유형 패턴)
+		System.out.println("\n--------------빈도수--------------");
+		int[] target = {1,3,3,2,1,1,3,0,1,2};
+		int[] ar = new int[4];	//new 를 사용하는 순간 초기값 0으로 셋팅됨
+		for(int i = 0; i < target.length; i++){
+			ar[target[i]]++;
+		}
+		System.out.println("0번부터 3번 숫자 빈도 수" + Arrays.toString(ar));
+		
+		//홀짝 (while과 continue의 의미를 알고있는가)
+		System.out.println("\n--------------홀짝--------------");
+		int a = 1;
+		while(a++ <= 30){
+			if(a%2 != 0)	continue;
+			System.out.print(a + " ");
+		}
+		System.out.println();
+		
+		//중첩 반복문
+		System.out.println("\n--------------중첩 반복문--------------");
+		
+		outerloop:	//continue lable
+		for(int i =0; i < 4; i++){
+			for(int j = 0; j < 10; j++){
+				int output = i * 10 + j;
+				if(output % 2 != 0){					
+					// if(j == 1){
+						// System.out.println();
+						// continue outerloop;	//바깥 반복문으로 돌아가고 싶을때 lable을 사용한다
+					// }						
+				continue;
+				}
+				else
+					System.out.print(output +"\t");
+			}
+			System.out.println();
+		}
+		
+		//2차원 배열
+		System.out.println("\n--------------2차원 배열--------------");
+		int R = 5, C = 5;
+		char[][] arr_2d = new char[][]{
+			{'□','□','□','□','□'},
+			{'□','□','□','□','□'},
+			{'□','□','★','□','□'},
+			{'□','□','□','□','□'},
+			{'□','□','□','□','□'}				
+		};
+		
+		for(int i = 0; i < R; i++){
+			for(int j = 0; j < C; j++){
+				System.out.print(arr_2d[i][j]);
+			}
+			System.out.println();
+		}
+		
 	}
 }
