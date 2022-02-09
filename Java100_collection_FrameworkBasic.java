@@ -32,7 +32,7 @@ class Person{}
 
 public class Java100_collection_FrameworkBasic{
 	public static void main(String[] args){
-		//[1]:제네릭이 아닌 Object 타입으로 사용하는 경우
+		//[1]:제네릭이 아닌 Object 타입으로 사용하는 경우(타입이 명확하지 않으므로 경고가 나올 수 있다)
 		ArrayList list1 = new ArrayList();
 		
 		//데이터 추가 → add();
@@ -71,5 +71,39 @@ public class Java100_collection_FrameworkBasic{
 		//[3-2]: 한꺼번에 삭제 -->ArrayListName.removeAll(ArrayListName); -->앞쪽 ArrayLIstName은 안적어도 문제는 없지만 경고 뜸(불안정함)
 		list2.removeAll(list2);
 		System.out.println(list2.size());
+		
+		
+		
+		//[5]:ArrayLIst 기반의 2D array
+		System.out.println("\n-----------------------ArrayList 의 2차원 배열--------------------");
+		ArrayList<Integer[]> arr2d = new ArrayList<Integer[]>();	//객체 생성
+		arr2d.add(new Integer[] {11,12,13,14});
+		arr2d.add(new Integer[] {21,22,23,24});
+		arr2d.add(new Integer[] {31,22,33,34});
+		
+		for(int i = 0; i < arr2d.size(); i++){
+			System.out.println(arr2d.get(i)[0]);	//각 배열의 첫번째 값
+		}
+		
+		//전체 요소 출력 -> 2중 반복문 -> 안쪽 배열의 사이즈 사전 체크[!]주의
+		//System.out.println(arr2d.get(0).size());		//Err --> 컬렉션 프레임워크 타입의 길이를 알고 싶을때
+		//System.out.println(arr2d.get(0).length());	//Err	--> 문자열의 길이를 알고 싶을때
+		//System.out.println(arr2d.get(0).length);		//Err	--> 배열(int[], Integer[], String[])의 길이를 알고 싶을때
+	
+		System.out.println("\n-----------------------ArrayList 의 2차원 배열 전체의 요소 출력----------------------------");
+		for(int i = 0; i< arr2d.size(); i++){
+			for(int j = 0; j < arr2d.get(i).length; j++){
+				System.out.print(arr2d.get(i)[j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println("\n-----------------------ArrayList 의 2차원 배열 전체의 요소 출력(향상된 for문)----------------------------");
+		for(Integer[] arr : arr2d){
+			for(Integer Element : arr){
+				System.out.print(Element + " ");
+			}
+			System.out.println();
+		}
+	
 	}
 }
