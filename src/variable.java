@@ -86,6 +86,20 @@ public class variable {
         System.out.println(v3);
         System.out.println(v4);
         System.out.println(v5);
+        System.out.println(l);
+        System.out.println(f);
+
+        int b = 15;
+        int y = 2022;
+        //%d(정수), %f(소수점형식), %c(문자), %s(문자열), %b(부울)
+        System.out.printf("올하는 %d년이고, %d살 입니다.\n", y, b);
+
+        //실수형 데이터 포멧은 %.소수점밑개수f
+        System.out.printf("단순 출력:%f\n소수점 1번째:%.1f\n소수점 3번째 %.3f\n",f,f,f);
+
+        //%e(지수), %o(8진수), %x(16진수)
+        System.out.printf("%d의 8진수는 %o, 16진수는 %x\n", b,b,b);
+
 
         int un_use;     //선언 자체는 Err가 아님 -> 자동화된 tool을 사용할 경우에는 사용하지 않는데 왜 선언했는지 메시지를 띄워준다
         //System.out.println(un_use);   //선언만 하고 초기화(할당)하지 않는 변수를 사용하려고 하는 경우 Err
