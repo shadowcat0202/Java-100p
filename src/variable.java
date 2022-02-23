@@ -19,6 +19,17 @@
                 long(8)     -2^63 ~ (2^63 - 1)
     실수타입 -->	float(4), double(8)
     논리타입 -->  참 or 거짓 --> boolean(1byte) --> true, false
+    
+    [1-1] Wrapper class(래퍼 클래스)
+    -> 프로그램에 따라 Primitive type(기본형 타입)의 데이터를 class 취급해야하는 경우가 생긴다
+        byte    ->  Byte
+        Short   ->  Short
+        int     ->  Integer
+        long    ->  Long
+        float   ->  Float
+        double  ->  Double
+        char    ->  Character
+        boolean ->  Boolean
 
 [2] Reference type(참조형 타입) = 기본형에 속하지 않는 데이터타입
     class, array, interface, String/immutable
