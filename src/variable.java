@@ -46,7 +46,7 @@ public class variable {
         int v1; //int v1 = 3; 과 같은 방식으로 선언과 동시에 초기화도 가능하다
         int v2;
         int sum;
-
+        
         v1 = 3;
         v2 = 4;
         sum = v1 + v2;
