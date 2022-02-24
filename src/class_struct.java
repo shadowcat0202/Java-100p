@@ -40,11 +40,11 @@ class Person{
     void walk(){    System.out.println("걸어가는 중~");  }
 }
 
+//상속 개념 설명 활용 미완성 Hero class
+//http://www.tcpschool.com/java/java_inheritance_concept    참조
 class Hero extends Person{
-    String hero_name; ;
+    String hero_name;
     int power;
-
-
 }
 
 public class class_struct {
@@ -59,9 +59,9 @@ public class class_struct {
     }
 
     //[3]:메서드(Method)
-    void method(){
-        System.out.println("class_struct의 method()입니다");
-        System.out.println(variable1 + "년에 만든 " + variable2 + "입니다.");
+    void method_info(){
+        System.out.println("class_struct의 method_info()입니다");
+        System.out.println(variable1 + "년에 만든 " + "class_struct" + variable2 + "입니다.");
     }
 
 }
