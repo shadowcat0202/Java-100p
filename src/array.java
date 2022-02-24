@@ -3,13 +3,15 @@ import java.util.Arrays;    //배열을 가지고 놀수 있는 메서드들이 
 public class array {
     //속성(Attribute)(Field)
     //[1]:배열의 선언
-    //DataType[] array_name = new DataType[array_size];	//선호도가 높다
-    
-    //DataType array_name[] = new DataType[array_size];
-
-    //DataType[] array_name                   //선언
-    //array_name = new DataType[array_size]   //new 연산자로 할당
-
+    /*
+        1.
+        DataType[] array_name = new DataType[array_size];	//선호도가 높다
+        2.
+        DataType array_name[] = new DataType[array_size];
+        3.
+        DataType[] array_name                               //선언
+        array_name = new DataType[array_size]               //new 연산자로 할당
+     */
 
     //생성자(Constructor)
     array(){}
@@ -46,6 +48,9 @@ public class array {
 
         //배열 이름 자체를 출력하게 되면 주소값을 출력한다
         System.out.println(d_arr1); //[D@주소값
-        
     }
+    
+    //이후 추가할 내용 아래 사이트 부터
+    //http://www.tcpschool.com/java/java_array_memory
+    
 }
