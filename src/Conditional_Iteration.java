@@ -60,7 +60,8 @@ public class Conditional_Iteration {
         }
     }
     
-    void ternary_operator(){    //삼항연산자
+    //[3]:삼항연산자
+    void ternary_operator(){
         int hour = 10;
         String apm = (hour < 12) ? "오전" : "오후";
         System.out.println(apm);
@@ -69,6 +70,77 @@ public class Conditional_Iteration {
         System.out.println("시간이 10보다 크기때문에 100을 곱함:" + hour);
     }
 
-    //반복문 내용 추가 요망
+    //[4]:반복문
+
+    //[4-1]:for 문
+    void for_loop() {
+        /*
+        for(초기식; 조건식; 증감식){
+            조건식의 결과가 참인동안 반복되는 명령문
+        }
+                        ┌───────←──────────┐
+        [절차]: 초기식 → 조건식 -(참)→ 반복 → 증감식
+                        └─────(거짓) → for문 탈출
+         */
+
+        //ex1(0 ~ 9 출력)
+        for(int i = 0; i < 10; i++){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        //ex2(A ~ z 출력)
+        for(int i = 65; i <= 90; i++){
+            System.out.print((char)i + " ");
+        }
+        System.out.println();
+    }
+
+    //[4_2]:while문
+    void while_loop(){
+		/*
+			while(조건문){
+                조건식의 결과가 참인동안 반복되는 명령문
+			}
+			--> 조건문이 참이면 반복한다.
+		*/
+
+        //ex1(짝수 출력)
+        int i = 1;
+        while(i <= 30){
+            if(i % 2 == 0)  System.out.print(i + " ");
+            i++;    //조건식에 영향을 주는 변수의 변화가 없다면 무한루프에 빠지게 되므로 주의!
+        }
+        System.out.println();
+    }
+
+    //[4-3]:do~while문
+    void do_while_loop(){
+        /*
+			do{
+                조건식의 결과가 참인동안 반복되는 명령문
+			}while(조건문);
+			--> 조건문이 참이면 do로 올라가서 반복한다. -> while문에서 조건문을 확인하는게 뒤에 있다고 보면 쉽다
+		*/
+        int i = 1;
+        do{
+            System.out.print(i + " ");
+            i++;
+        }while(i < 1);
+        System.out.println();
+    }
+
+    //[4-4]:향상된 for문
+    void enhanced_for(){
+        //자주 사용되는 상황(1.ArrayList 원소 출력 2.배열 원소 출력)
+        //속도: for문 == 향상된 for문
+        //장점: 간편, 가독성 좋은 코드, 배열 인덱스 문제 해결(ArrayIndexOutOfBoundsException 에외 피할수 있음)
+        //단점: index를 사용하지 못한다, 값을 사용 할 수는 있지만 절대로 수정은 할 수 없다
+        String[] arr = new String[] {"1-1","1-2","1-3","1-4","1-5"};
+        for(String s : arr){
+            System.out.println(s);
+        }
+    }
+
 
 }
