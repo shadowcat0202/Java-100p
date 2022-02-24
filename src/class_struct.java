@@ -25,7 +25,27 @@
 //(5) 한 파일내 3개 이상의 class에 모두 public 키워드가 없다면 class중 어느 것이라도 파일명이 될 수 있다.	○
 //(6) 자바 파일에 class가 한개 있다면 클래스명이 곧 파일명이 되어야 한다							        ○
 
+class Person{
+    //[1]: 속성(Attribute)(Field)
+    int gender;
+    int age;
 
+    //[2]: 생성자(Constructor)
+    Person(){
+        this.gender = 1;
+        this.age = 20;
+    }
+
+    //[3]: 메서드(Method)
+    void walk(){    System.out.println("걸어가는 중~");  }
+}
+
+class Hero extends Person{
+    String hero_name; ;
+    int power;
+
+
+}
 
 public class class_struct {
     //[1]: 속성(Attribute)
