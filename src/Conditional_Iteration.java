@@ -141,6 +141,32 @@ public class Conditional_Iteration {
             System.out.println(s);
         }
     }
+    
+    //[5]:제어문(continue, break, label(c언어에서는 goto문))
+    void continue_in_loop(){
+        for(int i = 1; i <= 50; i++){   //1~50 사이에서
+            if(i % 5 == 0 || i % 7 == 0)    System.out.print(i + " ");  //5의 배수 7의 배수 출력
+            else    continue;
+        }
+    }
 
+    void break_in_loop(){
+        int i = 1, sum = 0;
+        while(true){    //무한루프
+            sum += i;
+            if(i == 10)   break;
+            i++;
+        }
+        System.out.println(sum);
+    }
 
+    void label_in_loop(){
+        iLoop:
+        for(int i =2; i< 10; i++){
+            for(int j = 2; j < 10; j++){
+                if(i == 5)  break iLoop;    //i가 4단까지만 나옴
+                System.out.println(i + "*" + j +"=" + String.format("%2d",(i*j)));
+            }
+        }
+    }
 }
