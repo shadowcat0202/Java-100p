@@ -1,20 +1,19 @@
 import java.util.Arrays;    //배열을 가지고 놀수 있는 메서드들이 많이 들어있는 class? 라고 해야하나? ㅋ
+import java.util.Scanner;
 
 
 public class array {
     //속성(Attribute)(Field)
-    //[1]:배열의 선언
-    /*
-
-     */
+    //None
 
     //생성자(Constructor)
     array(){}
 
     //메서드(Method)
+
+    //1차원 배열
     void arr_1D(){
-        /*==========================================================================
-        //선언의 기본 문법
+        /*선언의 기본 문법==========================================================================
         DataType[] array_name;
         DataType array_name[];
 
@@ -40,8 +39,7 @@ public class array {
         System.out.println(Arrays.toString(i_arr1)); //그래서 Arrays class가 준비 했다! toString() 메서드를 통해 인자 값들을 보기 좋게 출력해준다
 
 
-        /*=============================================================================
-        //배열의 초기화
+        /*배열의 초기화=============================================================================
         DataType[] array_name = {element1, element2, ...};
         DataType[] array_name = new DataType[]{element1, element2, ...};
         -> 초기화 블록에 맞춰 자동으로 배열의 길이가 설정됨
@@ -56,7 +54,7 @@ public class array {
         i_arr4 = new int[] {1,2,3,4,5};
 
 
-        //=======================깨알 Tip=========================================================================
+        //깨알 Tip================================================================================
         double[] d_arr1 = {9.8,2.45,5.98,5.11,3.14};    //당연하겠지만 다른 데이터 타입도 가능하다
 
         //각 배열의 마지막 원소 출력(원소의 개수를 알 필요없다 왜냐 배열의 길이를 반환하는 메서드를 사용으로 해결)
@@ -65,8 +63,27 @@ public class array {
 
         //배열 이름 자체를 출력하게 되면 주소값을 출력한다
         System.out.println(d_arr1); //[D@주소값
+
+        //배열을 한꺼번에 선언
+        int[] a,b;      //정수형 배열 (a랑 b)
+        int c[], d[];   //정수형 (배열 a, 배열 b)
+        int e[], f;     //정수형 (배열 e, f) ->정수형 배열 하나와 정수형 변수 하나
+                        //-> 같은 class(형태)로 여러 변수이름을 선언하고싶으면 위의 2가지 방법을 사용
+
+        //[!]:베열 복사
+        //arraycopy()메서드 사용 --> System.arraycopy(원본배열명, 원본시작인덱스, 복사배열명, 복사시작엔덱스, 길이만큼);
+        int[] origin, copyarr;
+        origin = new int[] {0,1,2,3,4};
+        copyarr = new int[] {0,1,2,3,4,5,6,7,8,9};
+
+        System.out.println("\nSystem.arraycopy()");
+        System.out.println("origin:" + Arrays.toString(origin));
+        System.out.println("befor copyarray:" + Arrays.toString(copyarr));
+        System.arraycopy(origin, 2, copyarr, 4, 3);
+        System.out.println("after copyarray:" + Arrays.toString(copyarr));
     }
 
+    //다차원 배열
     void multi_dimensional_array(){
         /*
         //기본 선언 문법
@@ -85,20 +102,27 @@ public class array {
         };
         */
 
-        int[][] arr = new int[2][3];
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
-                arr[i][j] = i * 10 + j;
+        String[][] arr = {
+            {"한국","미국","일본"},
+            {"태국","베트남","필리핀"}
+        };
+
+        //row x colum
+        System.out.println("행열=" + arr.length + "x" + arr[0].length);
+
+        System.out.println(arr[0]); //1차 배열에 대한 주소값 출력
+        System.out.println(arr[1]); //1차 배열에 대한 주소값 출력
+
+        //enhanced for문
+        for(String[] row : arr){
+            for(String element : row){
+                System.out.println(element + " ");
             }
-        }
-        for(int[] ar : arr){
-            System.out.print("[");
-            for(int a : ar){
-                System.out.print(String.format("%2d,", a).replace(" ","0"));
-            }
-            System.out.println("]");
+            System.out.println();
         }
 
+        //[!]:charAt()메서드 -> 해당 인덱스에 있는 값을 반환 -> 단어를 char 배열에 한글자씩 저장 가능
+        System.out.println("charAt()메서드 사용 '베트남'에서 charAt(1)=" + arr[1][1].charAt(1));
 
         /*
         //가변배열(Dynamic array)
@@ -118,6 +142,35 @@ public class array {
 
         for(int[] ar : dy_arr){
             System.out.println(Arrays.toString(ar));
+        }
+
+        array_2D_UserInput_training();
+    }
+
+    private void array_2D_UserInput_training(){
+        System.out.println("2차원 배열 연습해보기=====================");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("행 열을 띄어쓰기로 구분하여 입력하고 [Enter]:");
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+
+        char[][] gameMap = new char[row][col];
+
+        String[] strArr = new String[row];
+        for(int i = 0; i < row; i++){
+            System.out.println((i+1) + "번째 행에 입력할 문자 " + col + "개(열)를 차례대로 입력하고 [Enter]:");
+            strArr[i] = sc.next();
+            for(int j = 0; j < col; j++){
+                gameMap[i][j] = strArr[i].charAt(j);
+            }
+        }
+
+        for(char[] carr : gameMap){
+            for(char ch : carr){
+                System.out.print(ch + " ");
+            }
+            System.out.println();
         }
 
     }
