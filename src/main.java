@@ -1,19 +1,22 @@
-
 public class main {
     public static void isStatic_method(){
         System.out.println("main class안에 같이 작성된 public static void method()");
     }
 
     public static void stub(){
+
     }
 
     public static void main(String[] args) {
         //http://www.tcpschool.com/java/intro   참고 사이트
 
+        //stub();
+
         class_struct cs = new class_struct();
-        cs.Overloading_display(1);
-        cs.Overloading_display(2,55.2);
-        cs.Overloading_display(3,7);
+        cs.info();
+        
+        //class_struct cs = new class_struct();
+
         //=============class variable=======================================
 //        variable va = new variable();
 //        va.dataType();
