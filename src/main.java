@@ -14,7 +14,7 @@ public class main {
 
         class_struct cs = new class_struct();
         cs.info();
-        
+
         //class_struct cs = new class_struct();
 
         //=============class variable=======================================
