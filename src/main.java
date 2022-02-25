@@ -10,6 +10,10 @@ public class main {
     public static void main(String[] args) {
         //http://www.tcpschool.com/java/intro   참고 사이트
 
+        class_struct cs = new class_struct();
+        cs.Overloading_display(1);
+        cs.Overloading_display(2,55.2);
+        cs.Overloading_display(3,7);
         //=============class variable=======================================
 //        variable va = new variable();
 //        va.dataType();
