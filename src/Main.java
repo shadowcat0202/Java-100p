@@ -1,10 +1,14 @@
-public class main {
+public class Main {
     public static void isStatic_method(){
         System.out.println("main class안에 같이 작성된 public static void method()");
     }
 
-    public static void stub(){
 
+
+    public static void stub(){
+        String str = "12.5";
+        int i = (int)Math.round(Float.parseFloat(str));
+        System.out.println(i);
     }
 
     public static void main(String[] args) {
@@ -12,8 +16,8 @@ public class main {
 
         //stub();
 
-        class_struct cs = new class_struct();
-        cs.info();
+        //class_struct cs = new class_struct();
+        //cs.info();
 
         //class_struct cs = new class_struct();
 
